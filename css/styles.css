@@ -1,7 +1,10 @@
+body {
+    background-color: #d4fff9;
+}
 .table, th, td {
     font-family: Sans-Serif, serif;
     font-size: 14px;
-    border: 0px solid black;
+    border: 0 solid black;
     border-radius: 10px;
     width: 400px;
     background: #6efce4;
@@ -21,4 +24,12 @@
 }
 #info-pic{
     height: 70%;
+}
+
+#submit:hover{
+    color: #80bd34;
+}
+
+h2 i {
+    color:red; /* задаём цвет шрифта*/
 }

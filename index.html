@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Лабораторная работа по Web-программированию №1</title>
@@ -27,7 +27,7 @@
        function validate() {
            var y = this.y.value;
            y = y.replace(/,/, ".");
-           if (y =="" || isNaN(y)) {document.getElementById("error").textContent = "Y должен быть числом"; return false}
+           if (y === "" || isNaN(y)) {document.getElementById("error").textContent = "Y должен быть числом"; return false}
            else if (y<-3 || y>5){
                document.getElementById("error").textContent = "Y должен находиться от -3 до 5"; return false
            }
@@ -42,9 +42,9 @@
            request.open("GET", "ajax.php?y=" + ajaxY, true);
            request.onreadystatechange = function()
            {
-               if (this.readyState == 4)
+               if (this.readyState === 4)
                {
-                   if (this.status == 200)
+                   if (this.status === 200)
                    {
                        if (this.responseText != null)
                        {
@@ -64,7 +64,7 @@
 <table align="center">
     <tr>
         <th id="header">
-            Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: 2823
+            <h2>Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: <i>2823</i></h2>
         </th>
     </tr>
     <tr>
@@ -79,7 +79,7 @@
                 <li>Отступы элементов ввода должны задаваться в пикселях.</li>
                 <li>Страница должна содержать сценарий на языке JavaScript, осуществляющий валидацию значений, вводимых пользователем в поля формы. Любые некорректные значения (например, буквы в координатах точки или отрицательный радиус) должны блокироваться.</li>
             </ul>
-            <img src="img/pic.png" id="info-pic">
+            <img src="img/pic.png" id="info-pic" alt="img/pic.png">
         </th>
     </tr>
     <tr>
