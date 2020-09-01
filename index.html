@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа по Web-программированию №1</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+   <script type="text/javascript">
+       function ajaxRequest() {
+           try {
+               var request = new XMLHttpRequest()
+           }
+           catch (e1) {
+               try{
+                   request = new ActiveXObject("Msxml2.XMLHTTP")
+               }
+               catch (e2) {
+                   try {
+                       request = new ActiveXObject("Microsoft.XMLHTTP")
+                   }
+                   catch (e3) {
+                       request = false
+                   }
+               }
+           }
+           return request
+       }
+       function validate() {
+           var y = this.y.value;
+           y = y.replace(/,/, ".");
+           if (y =="" || isNaN(y)) {document.getElementById("error").textContent = "Y должен быть числом"; return false}
+           else if (y<-3 || y>5){
+               document.getElementById("error").textContent = "Y должен находиться от -3 до 5"; return false
+           }
+           else {
+               document.getElementById("tr-result").style.display = "table-row";
+               document.getElementById("error").textContent = "";
+               return true;}
+       }
+       function check() {
+           request = new ajaxRequest();
+           ajaxY = document.querySelector("input[type=text]").value;
+           request.open("GET", "ajax.php?y=" + ajaxY, true);
+           request.onreadystatechange = function()
+           {
+               if (this.readyState == 4)
+               {
+                   if (this.status == 200)
+                   {
+                       if (this.responseText != null)
+                       {
+                           document.getElementById('error').textContent =
+                               this.responseText
+                       }
+                       else alert("Ошибка AJAX: Данные не получены ")
+                   }
+                   else alert( "Ошибка AJAX: " + this.statusText)
+               }
+           }
+           request.send(null)
+       }
+   </script>
+</head>
+<body>
+<table align="center">
+    <tr>
+        <th id="header">
+            Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: 2823
+        </th>
+    </tr>
+    <tr>
+        <th>
+            <ul id="task">
+                Разработанная HTML-страница должна удовлетворять следующим требованиям:
+                <li>Для расположения текстовых и графических элементов необходимо использовать табличную верстку.</li>
+                <li>Данные формы должны передаваться на обработку посредством GET-запроса.</li>
+                <li>Таблицы стилей должны располагаться в отдельных файлах.</li>
+                <li>При работе с CSS должно быть продемонстрировано использование селекторов идентификаторов, селекторов псевдоклассов, селекторов классов, селекторов потомств а также такие свойства стилей CSS, как наследование и каскадирование.</li>
+                <li>HTML-страница должна иметь "шапку", содержащую ФИО студента, номер группы и новер варианта. При оформлении шапки необходимо явным образом задать шрифт (serif), его цвет и размер в каскадной таблице стилей.</li>
+                <li>Отступы элементов ввода должны задаваться в пикселях.</li>
+                <li>Страница должна содержать сценарий на языке JavaScript, осуществляющий валидацию значений, вводимых пользователем в поля формы. Любые некорректные значения (например, буквы в координатах точки или отрицательный радиус) должны блокироваться.</li>
+            </ul>
+            <img src="img/pic.png" id="info-pic">
+        </th>
+    </tr>
+    <tr>
+        <td>
+            <form action="work.php" method="get" target="result">
+                Выберите X:
+                <input type="radio" checked="checked" name="x" value="-4">-4
+                <input type="radio" name="x" value="-3">-3
+                <input type="radio" name="x" value="-2">-2
+                <input type="radio" name="x" value="-1">-1
+                <input type="radio" name="x" value="0">0
+                <input type="radio" name="x" value="1">1
+                <input type="radio" name="x" value="2">2
+                <input type="radio" name="x" value="3">3
+                <input type="radio" name="x" value="4">4
+                <br>
+                Введите Y:
+                <input type="text"  placeholder="-5..3" name="y" >
+                <br>
+                Выберите R:
+                <select name="r">
+                    <option value="1">1</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                    <option value="3">3</option>
+
+                </select>
+                <br>
+                <input type="submit" id="submit">
+            </form>
+            <br>
+            <span id="error"></span>
+        </td>
+    </tr>
+    <tr id="tr-result" style="display: none">
+        <td>
+            <iframe id="result" name="result" scrolling="no" frameborder="no" ></iframe>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            г. Санкт-Петербург<br>
+            2020 г.
+        </td>
+    </tr>
+</table>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+    document.querySelector("form").onsubmit=validate;
+    let tmr;
+    document.querySelector("input[type=text]").onkeyup = function() {
+        clearTimeout(tmr);
+        tmr = setTimeout(check,1000);
+    };
+
+</script>
+</body>
+</html>

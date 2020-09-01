@@ -1,0 +1,24 @@
+.table, th, td {
+    font-family: Sans-Serif, serif;
+    font-size: 14px;
+    border: 0px solid black;
+    border-radius: 10px;
+    width: 400px;
+    background: #6efce4;
+    padding: 15px;
+    text-align: center;
+}
+#header{
+    text-align: center;
+    font-family: serif;
+    font-size: 18px;
+    color: black;
+    line-height: 170%;
+}
+#task{
+    width: 800px;
+    text-align: left;
+}
+#info-pic{
+    height: 70%;
+}
