@@ -6,12 +6,12 @@ body {
     font-size: 14px;
     border: 0 solid black;
     border-radius: 10px;
-    width: 400px;
     background: #6efce4;
     padding: 15px;
     text-align: center;
 }
 #header{
+    width: 120%;
     text-align: center;
     font-family: serif;
     font-size: 18px;
@@ -19,7 +19,6 @@ body {
     line-height: 170%;
 }
 #task{
-    width: 800px;
     text-align: left;
 }
 #info-pic{
