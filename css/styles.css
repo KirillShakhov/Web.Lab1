@@ -18,6 +18,10 @@ body {
     color: black;
     line-height: 170%;
 }
+
+#buttons{
+    font-size: 16px;
+}
 #task{
     text-align: left;
 }
