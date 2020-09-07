@@ -8,7 +8,7 @@
 <body>
 <table align="center">
     <tr>
-        <th id="header" colspan="2" height="20%">
+        <th id="header" colspan="2" height="10%">
             <h2>Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: <i>2823</i></h2>
         </th>
     </tr>
@@ -16,23 +16,24 @@
         <td id="buttons" width="40%">
             <form action="work.php" method="get" target="result">
                 Выберите X:
-                <input type="radio" checked="checked" name="x" value="-4">-4
-                <input type="radio" name="x" value="-3">-3
-                <input type="radio" name="x" value="-2">-2
-                <input type="radio" name="x" value="-1">-1
-                <input type="radio" name="x" value="0">0
-                <input type="radio" name="x" value="1">1
-                <input type="radio" name="x" value="2">2
-                <input type="radio" name="x" value="3">3
-                <input type="radio" name="x" value="4">4
+                <input class="radio_button" type="radio" checked="checked" name="x" value="-4">-4
+                <input class="radio_button" type="radio" name="x" value="-3">-3
+                <input class="radio_button" type="radio" name="x" value="-2">-2
+                <input class="radio_button" type="radio" name="x" value="-1">-1
+                <input class="radio_button" type="radio" name="x" value="0">0
+                <input class="radio_button" type="radio" name="x" value="1">1
+                <input class="radio_button" type="radio" name="x" value="2">2
+                <input class="radio_button" type="radio" name="x" value="3">3
+                <input class="radio_button" type="radio" name="x" value="4">4
                 <br>
                 <br>
                 Введите Y:
-                <input type="text"  placeholder="-5..3" name="y" >
+                <input type="text" id="input_text" placeholder="-5..3" name="y" >
+                <span id="error"></span>
                 <br>
                 <br>
                 Выберите R:
-                <select name="r">
+                <select name="r" id="select_r">
                     <option value="1">1</option>
                     <option value="1.5">1.5</option>
                     <option value="2">2</option>
@@ -41,10 +42,8 @@
                 </select>
                 <br>
                 <br>
-                <input type="submit" id="submit">
+                <input class="button" type="submit" id="submit" value="Результат" align="center">
             </form>
-            <br>
-            <span id="error"></span>
         </td>
         <td width="60%" rowspan="2">
             <ul id="task">
@@ -64,25 +63,24 @@
         <td>
             <table class="dynamic" id="dynamic" width="650" border="0" cellspacing="0" cellpadding="4">
                 <tr>
-                    <th scope="col">Поле 1</th>
-                    <th scope="col">Поле 2</th>
-                    <th scope="col">Поле 3</th>
-                    <th scope="col">Поле 4</th>
+                    <th scope="col">XYR</th>
+                    <th scope="col">Результат</th>
+                    <th scope="col">Current Time</th>
+                    <th scope="col">Computation Time</th>
                 </tr>
+                <tr>
+                    <td colspan="4" height="200p"><h1>Нет значений</h1> </td>
+                </tr>
+                <!--
                 <tr>
                     <td>Значение 1</td>
                     <td>Значение 2</td>
                     <td>Значение 3</td>
                     <td>Значение 4</td>
                 </tr>
-                <tr>
-                    <td>Значение 1</td>
-                    <td>Значение 2</td>
-                    <td>Значение 3</td>
-                    <td>Значение 4</td>
-                </tr>
+                -->
             </table>
-            <iframe id="result" name="result" scrolling="no" frameborder="no" height="70%"></iframe>
+            <!--<iframe id="result" name="result" scrolling="no" frameborder="no" height="70%"></iframe>-->
         </td>
     </tr>
     <tr>
