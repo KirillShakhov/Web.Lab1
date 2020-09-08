@@ -17,9 +17,9 @@ $time = number_format(microtime(true)-$start,6);
 $dt = new DateTime("now", new DateTimeZone('Europe/Moscow'));
 
 if ($check){
-    echo "<div style=\"text-align: center;\"><b>Результат:</b><br>Точка (" . $x . "; " . $y . ") при r = " . $r . " лежит в заданной области<br>Текущее время: " . $dt->format('H:i:s'). "<br> Время выполнения скрипта: ". $time . " с</div>";
+    echo "<tr><th scope=\"col\">" . $x . "; " . $y . "; " . $r . "</th><th scope=\"col\">лежит в заданной области</th><th scope=\"col\">" . $dt->format('H:i:s') . "</th><th scope=\"col\">" . $time . "</th></tr>";
 }
 else {
     echo "<div style=\"text-align: center;\"><b>Результат:</b><br>Точка (" . $x . "; " . $y . ") при r = " . $r . " не лежит в заданной области<br>Текущее время: " . $dt->format('H:i:s'). "<br> Время выполнения скрипта: ". $time . " с</div>";
 }
-?>
+
