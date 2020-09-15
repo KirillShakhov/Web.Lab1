@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Лабораторная работа по Web-программированию №1</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-<table align="center">
+<table>
     <tr>
         <th id="header" height="10%">
             <h2>Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: <i>2823</i></h2>
         </th>
         <td width="60%" rowspan="3">
             <ul id="task">
-                Разработанная HTML-страница должна удовлетворять следующим требованиям:
+                <h3>Разработанная HTML-страница должна удовлетворять следующим требованиям:</h3>
                 <li>Для расположения текстовых и графических элементов необходимо использовать табличную верстку.</li>
                 <li>Данные формы должны передаваться на обработку посредством GET-запроса.</li>
                 <li>Таблицы стилей должны располагаться в отдельных файлах.</li>
@@ -27,8 +27,11 @@
     </tr>
     <tr>
         <td id="buttons" width="40%">
-            <form action="php/work.php" method="get" target="result">
-                Выберите X:
+            <form></form>
+            <form id="1" action="" onsubmit="addRow();return false;">
+                <legend>Добавить сотрудника</legend>
+                <br>
+                <label>Выберите X:</label>
                 <input class="radio_button" type="radio" checked="checked" name="x" value="-4">-4
                 <input class="radio_button" type="radio" name="x" value="-3">-3
                 <input class="radio_button" type="radio" name="x" value="-2">-2
@@ -40,12 +43,12 @@
                 <input class="radio_button" type="radio" name="x" value="4">4
                 <br>
                 <br>
-                Введите Y:
-                <input type="text" id="input_text" placeholder="-5..3" name="y" >
+                <label>Введите Y:</label>
+                <input type="text" id="input_text" placeholder="-5..3" name="y">
                 <span id="error"></span>
                 <br>
                 <br>
-                Выберите R:
+                <label>Выберите R:</label>
                 <select name="r" id="select_r">
                     <option value="1">1</option>
                     <option value="1.5">1.5</option>
@@ -55,30 +58,21 @@
                 </select>
                 <br>
                 <br>
-                <input class="button" type="submit" id="submit" value="Результат" align="center">
+                <input type="submit" name="submit" id="submit" class="submit" value="Добавить" tabindex="4" />
             </form>
         </td>
     </tr>
     <tr id="tr-result">
         <td rowspan="2">
-            <table class="dynamic" id="dynamic" width="650" border="0" cellspacing="0" cellpadding="4" align="center">
-                <tr>
-                    <th scope="col">XYR</th>
-                    <th scope="col">Результат</th>
-                    <th scope="col">Current Time</th>
-                    <th scope="col">Computation Time</th>
-                </tr>
-                <tr>
-                    <th colspan="4" height="200px"><h2>Нет значений</h2></th>
-                </tr>
-                <!--
-                <tr>
-                    <td>Значение 1</td>
-                    <td>Значение 2</td>
-                    <td>Значение 3</td>
-                    <td>Значение 4</td>
-                </tr>
-                -->
+            <table id="result-table" class="sortable" width="650" border="0" cellspacing="0" cellpadding="4" align="center">
+                <thead>
+                <th scope="col">XYR</th>
+                <th scope="col">Результат</th>
+                <th scope="col">Current Time</th>
+                <th scope="col">Computation Time</th>
+                </thead>
+                <tbody id="results_table_body">
+                </tbody>
             </table>
             <!--<iframe id="result" name="result" scrolling="no" frameborder="no" height="70%"></iframe>-->
         </td>
@@ -91,6 +85,8 @@
     </tr>
 </table>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script src="./js/table.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 </body>
 </html>

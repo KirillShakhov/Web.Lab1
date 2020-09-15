@@ -48,6 +48,7 @@ h2 i{
 }
 #submit:hover{
     color: #80bd34;
+    border: 1px silver;
 }
 #select_r{
     width: 100px;
