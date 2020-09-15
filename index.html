@@ -11,7 +11,7 @@
         <th id="header" height="10%">
             <h2>Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: <i>2823</i></h2>
         </th>
-        <td width="60%" rowspan="3">
+        <td width="60%" rowspan="3" align="top">
             <ul id="task">
                 <h3>Разработанная HTML-страница должна удовлетворять следующим требованиям:</h3>
                 <li>Для расположения текстовых и графических элементов необходимо использовать табличную верстку.</li>
@@ -28,7 +28,7 @@
     <tr>
         <td id="buttons" width="40%">
             <form></form>
-            <form id="1" action="" onsubmit="addRow();return false;">
+            <form id="1" action="" onsubmit="execute();return false;">
                 <legend>Добавить сотрудника</legend>
                 <br>
                 <label>Выберите X:</label>
@@ -58,20 +58,21 @@
                 </select>
                 <br>
                 <br>
-                <input type="submit" name="submit" id="submit" class="submit" value="Добавить" tabindex="4" />
+                <input type="submit" name="submit" id="submit" class="submit" value="Добавить" tabindex="4"/>
             </form>
         </td>
     </tr>
     <tr id="tr-result">
-        <td rowspan="2">
-            <table id="result-table" class="sortable" width="650" border="0" cellspacing="0" cellpadding="4" align="center">
+        <td rowspan="5">
+            <table id="result-table" class="sortable" width="650" border="0" cellspacing="4" cellpadding="4" align="center">
                 <thead>
-                <th scope="col">XYR</th>
-                <th scope="col">Результат</th>
-                <th scope="col">Current Time</th>
-                <th scope="col">Computation Time</th>
+                    <th scope="col">XYR</th>
+                    <th scope="col">Результат</th>
+                    <th scope="col">Current Time</th>
+                    <th scope="col">Computation Time</th>
                 </thead>
                 <tbody id="results_table_body">
+                    <!--<th id="no_result" colspan="4">Нет результатов</th>-->
                 </tbody>
             </table>
             <!--<iframe id="result" name="result" scrolling="no" frameborder="no" height="70%"></iframe>-->
@@ -85,7 +86,6 @@
     </tr>
 </table>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script type="text/javascript" src="js/script.js"></script>
 <script src="./js/table.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 </body>

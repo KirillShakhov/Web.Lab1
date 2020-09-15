@@ -1,36 +1,47 @@
-var d = document;
+let d = document;
+let X, Y, R;
+let result;
+let result_array;
+//let first = true;
 
-var X;
-var Y;
-var R;
-
-var test  = 'asd';
-
-function addRow()
+function execute()
 {
-    $.get("work.php", {test:test},
-        function(data){
-            $('#content').html(data);
+    let inp = document.getElementsByName('x');
+    for (let i = 0; i < inp.length; i++) {
+        if (inp[i].type === "radio" && inp[i].checked) {
+            X = inp[i].value;
         }
-    );
-    // Считываем значения с формы
-    //X = d.getElementsByName('x').value;
+    }
     Y = d.getElementById('input_text').value;
     R = d.getElementById('select_r').value;
 
+    $.get('./php/work.php', {x: X, y:Y, r: R}, function(data) {
+        result = data; // ответ от сервера
+        let array;
+        array = result.split("#");
+        add_row(array[0], array[1], array[2], array[3]);
+    })
+}
+function add_row(xyr, result, current_time, computation_time){
     // Находим нужную таблицу
-    var tbody = d.getElementById('result-table').getElementsByTagName('TBODY')[0];
-
+    let tbody = d.getElementById('result-table').getElementsByTagName('TBODY')[0];
     // Создаем строку таблицы и добавляем ее
-    var row = d.createElement("TR");
+    let row = d.createElement("TR");
     tbody.appendChild(row);
+/*
+    if(first){
+        first = false;
+        d.removeChild(d.getElementById("no_result"));
+    }
+
+ */
 
     // Создаем ячейки в вышесозданной строке
     // и добавляем тх
-    var td1 = d.createElement("TD");
-    var td2 = d.createElement("TD");
-    var td3 = d.createElement("TD");
-    var td4 = d.createElement("TD");
+    let td1 = d.createElement("TD");
+    let td2 = d.createElement("TD");
+    let td3 = d.createElement("TD");
+    let td4 = d.createElement("TD");
 
     row.appendChild(td1);
     row.appendChild(td2);
@@ -38,8 +49,8 @@ function addRow()
     row.appendChild(td4);
 
     // Наполняем ячейки
-    td1.innerHTML = test;
-    td2.innerHTML = Y;
-    td3.innerHTML = R;
-    td4.innerHTML = R;
+    td1.innerHTML = xyr;
+    td2.innerHTML = result;
+    td3.innerHTML = current_time;
+    td4.innerHTML = computation_time;
 }
