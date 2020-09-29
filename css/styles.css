@@ -1,7 +1,7 @@
 body {
     background-color: #d4fff9;
 }
-body{zoom: 75%;}
+
 html, body { height:100%; margin:0; padding:0; }
 table{
     border: 0;
@@ -11,7 +11,7 @@ table{
     padding: 15px;
     text-align: center;
 }
-th, td{
+th, td, tr{
     border: 0 solid black;
     border-radius: 10px;
     background: #6efce4;

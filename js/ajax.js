@@ -1,3 +1,4 @@
+var o = document.getElementById('submit');
 function ajaxRequest() {
     try {
         var request = new XMLHttpRequest()
@@ -22,12 +23,14 @@ function validate() {
     y = y.replace(/,/, ".");
     if (y === "" || isNaN(y)) {document.getElementById("error").textContent = "Y должен быть числом"; return false}
     else if (y<-3 || y>5){
+        $('#submit').attr('disabled','disabled');
         document.getElementById("error").textContent = "Y должен находиться от -3 до 5"; return false
     }
     else {
         document.getElementById("tr-result").style.display = "table-row";
         document.getElementById("error").textContent = "";
-        return true;}
+        return true;
+    }
 }
 function check() {
     request = new ajaxRequest();

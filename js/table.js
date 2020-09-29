@@ -2,7 +2,7 @@ let d = document;
 let X, Y, R;
 let result;
 let result_array;
-//let first = true;
+let first = true;
 
 function execute()
 {
@@ -23,34 +23,38 @@ function execute()
     })
 }
 function add_row(xyr, result, current_time, computation_time){
-    // Находим нужную таблицу
-    let tbody = d.getElementById('result-table').getElementsByTagName('TBODY')[0];
-    // Создаем строку таблицы и добавляем ее
-    let row = d.createElement("TR");
-    tbody.appendChild(row);
-/*
-    if(first){
-        first = false;
-        d.removeChild(d.getElementById("no_result"));
+    if(result === undefined){
+        alert(xyr);
     }
+    else {
+        // Находим нужную таблицу
+        let tbody = d.getElementById('result-table').getElementsByTagName('TBODY')[0];
+        // Создаем строку таблицы и добавляем ее
+        let row = d.createElement("TR");
+        tbody.appendChild(row);
 
- */
+        if (first) {
+            first = false;
+            d.getElementById("no_result").remove();
+        }
 
-    // Создаем ячейки в вышесозданной строке
-    // и добавляем тх
-    let td1 = d.createElement("TD");
-    let td2 = d.createElement("TD");
-    let td3 = d.createElement("TD");
-    let td4 = d.createElement("TD");
 
-    row.appendChild(td1);
-    row.appendChild(td2);
-    row.appendChild(td3);
-    row.appendChild(td4);
+        // Создаем ячейки в вышесозданной строке
+        // и добавляем тх
+        let td1 = d.createElement("TH");
+        let td2 = d.createElement("TH");
+        let td3 = d.createElement("TH");
+        let td4 = d.createElement("TH");
 
-    // Наполняем ячейки
-    td1.innerHTML = xyr;
-    td2.innerHTML = result;
-    td3.innerHTML = current_time;
-    td4.innerHTML = computation_time;
+        row.appendChild(td1);
+        row.appendChild(td2);
+        row.appendChild(td3);
+        row.appendChild(td4);
+
+        // Наполняем ячейки
+        td1.innerHTML = xyr;
+        td2.innerHTML = result;
+        td3.innerHTML = current_time;
+        td4.innerHTML = computation_time;
+    }
 }
