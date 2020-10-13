@@ -33,10 +33,10 @@ function add_row(xyr, result, current_time, computation_time){
         let row = d.createElement("TR");
         tbody.appendChild(row);
 
-        if (first) {
-            first = false;
-            d.getElementById("no_result").remove();
-        }
+        //if (first) {
+        //    first = false;
+        //    d.getElementById("no_result").remove();
+        //}
 
 
         // Создаем ячейки в вышесозданной строке

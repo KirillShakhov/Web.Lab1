@@ -11,7 +11,7 @@
         <th id="header" height="10%">
             <h2>Шахов Кирилл Андреевич<br> Группа P3232 <br> Вариант: <i>2823</i></h2>
         </th>
-        <td rowspan="3" align="top">
+        <td id="td-task" rowspan="3">
             <ul id="task">
                 <h3>Разработанная HTML-страница должна удовлетворять следующим требованиям:</h3>
                 <li>Для расположения текстовых и графических элементов необходимо использовать табличную верстку.</li>
@@ -63,7 +63,7 @@
         </td>
     </tr>
     <tr id="tr-result">
-        <td rowspan="5">
+        <td rowspan="2">
             <table id="result-table" class="sortable" width="650" border="0" cellspacing="4" cellpadding="4" align="center">
                 <thead>
                 <tr>
@@ -74,7 +74,18 @@
                 </tr>
                 </thead>
                 <tbody id="results_table_body">
-                <tr><th id="no_result" colspan="4">Нет результатов</th></tr>
+                <!--<tr id="no_result"><th colspan="4">Нет результатов</th></tr>-->
+                <?php
+                session_start();
+                if (isset($_SESSION['results'])) {
+                    foreach ($_SESSION['results'] as $result) { ?>
+                        <tr>
+                            <th><?php echo $result[0] ?></th>
+                            <th><?php echo $result[1] ?></th>
+                            <th><?php echo $result[2] ?></th>
+                            <th><?php echo $result[3] ?></th>
+                        </tr>
+                    <?php }} ?>
                 </tbody>
             </table>
         </td>

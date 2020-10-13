@@ -67,3 +67,6 @@ h2 i{
     height: 20px;
     border: 0;
 }
+#td-task, #task{
+    vertical-align: top;
+}

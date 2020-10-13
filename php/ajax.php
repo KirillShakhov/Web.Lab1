@@ -4,5 +4,5 @@ $y = preg_replace("/,/", ".", $y);
 $fail = "";
 if (preg_match("/[^-\d,.]/", $y)) $fail .= "Введены недопустимые символы\n";
 elseif ($y == "" || !is_numeric($y)) $fail .= "Y должен быть числом\n";
-elseif ($y<-5 || $y>3) $fail.= "Y должен находиться от -5 до 3";
+elseif ($y<=-5 || $y>=3) $fail.= "Y должен находиться от -5 до 3";
 echo $fail;

@@ -22,8 +22,7 @@ function validate() {
     var y = this.y.value;
     y = y.replace(/,/, ".");
     if (y === "" || isNaN(y)) {document.getElementById("error").textContent = "Y должен быть числом"; return false}
-    else if (y<-3 || y>5){
-        $('#submit').attr('disabled','disabled');
+    else if (y<=-5 || y>=3){
         document.getElementById("error").textContent = "Y должен находиться от -3 до 5"; return false
     }
     else {
@@ -35,7 +34,7 @@ function validate() {
 function check() {
     request = new ajaxRequest();
     ajaxY = document.querySelector("input[type=text]").value;
-    request.open("GET", "ajax.php?y=" + ajaxY, true);
+    request.open("GET", "php/ajax.php?y=" + ajaxY, true);
     request.onreadystatechange = function()
     {
         if (this.readyState === 4)
@@ -58,5 +57,5 @@ document.querySelector("form").onsubmit=validate;
 let tmr;
 document.querySelector("input[type=text]").onkeyup = function() {
     clearTimeout(tmr);
-    tmr = setTimeout(check,1000);
+    tmr = setTimeout(check,100);
 };
