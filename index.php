@@ -29,8 +29,6 @@
         <td id="buttons">
             <form></form>
             <form id="1" action="" onsubmit="execute();return false;">
-                <legend>Добавить сотрудника</legend>
-                <br>
                 <label>Выберите X:</label>
                 <input class="radio_button" type="radio" checked="checked" name="x" value="-4">-4
                 <input class="radio_button" type="radio" name="x" value="-3">-3
