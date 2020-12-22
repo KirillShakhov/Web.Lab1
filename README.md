@@ -1,5 +1,11 @@
 # Web.Lab1
 
+[![GitHub stars][stars-shield]][stars-url]
+[![GitHub issues][issues-shield]][issues-url]
+[![GitHub][license-shield]][license-url]
+![GitHub repo size](https://img.shields.io/github/repo-size/KirillShakhov/Web.Lab1)
+![GitHub last commit](https://img.shields.io/github/last-commit/KirillShakhov/Web.Lab1)
+
 Разработать PHP-скрипт, определяющий попадание точки на координатной плоскости в заданную область, и создать HTML-страницу, которая формирует данные для отправки их на обработку этому скрипту.
 
 Параметр R и координаты точки должны передаваться скрипту посредством HTTP-запроса. Скрипт должен выполнять валидацию данных и возвращать HTML-страницу с таблицей, содержащей полученные параметры и результат вычислений - факт попадания или непопадания точки в область. Предыдущие результаты должны сохраняться между запросами и отображаться в таблице.
@@ -40,3 +46,10 @@ ____
 P.S. Ваша домашняя директории также должна иметь права **755**.
 
 Лаба будет доступна по ссылке `https://se.ifmo.ru/~вашНомерНаГелиосе/`
+
+[stars-shield]: https://img.shields.io/github/stars/KirillShakhov/Web.Lab1?style=social
+[stars-url]: https://github.com/KirillShakhov/Web.Lab1/stargazers
+[issues-shield]: https://img.shields.io/github/issues/KirillShakhov/Web.Lab1
+[issues-url]: https://github.com/KirillShakhov/Web.Lab1/issues
+[license-shield]: https://img.shields.io/github/license/KirillShakhov/Web.Lab1
+[license-url]: https://github.com/KirillShakhov/Web.Lab1/blob/master/LICENSE
